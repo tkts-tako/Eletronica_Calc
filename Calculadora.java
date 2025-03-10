@@ -16,7 +16,7 @@ public class Calculadora
         num1 = sc.nextDouble();
         num2 = sc.nextDouble();
 
-        System.out.println("Insere o operador (+, -, *, /):");
+        System.out.println("Insere o operador (+, -, *, /, //):");
 
         char op = sc.next().charAt(0);
         double o = 0;
@@ -39,6 +39,10 @@ public class Calculadora
                 o = num1 / num2;
                 break;
 
+            case '//':
+                o = (num1 + num2) / (num1 * num2);
+                break;
+
             default:
                 System.out.println("Operador inválido.");
         }
@@ -46,6 +50,6 @@ public class Calculadora
         System.out.println("Resultado:");
         System.out.println();
 
-        System.out.println(num1 + " " + op + " " + num2 + " = " + o);
+        System.out.println(o);
     }
 }
