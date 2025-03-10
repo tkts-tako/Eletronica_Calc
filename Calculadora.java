@@ -39,10 +39,6 @@ public class Calculadora
                 o = num1 / num2;
                 break;
 
-            case '//':
-                o = (num1 + num2) / (num1 * num2);
-                break;
-
             default:
                 System.out.println("Operador inválido.");
         }
@@ -50,6 +46,6 @@ public class Calculadora
         System.out.println("Resultado:");
         System.out.println();
 
-        System.out.println(o);
+        System.out.println(num1 + " " + op + " " + num2 + " = " + o);
     }
 }
