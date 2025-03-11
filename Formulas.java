@@ -111,7 +111,7 @@ public class Formulas
                 System.out.println();
                 System.out.println("IL = " + IL + "A");
                 break;
-            case 6:
+            case '6':
                 break;
             default:
                 System.out.println("Não foi selecionada nenhuma das opções.");
