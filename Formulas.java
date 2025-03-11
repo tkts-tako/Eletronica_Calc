@@ -25,7 +25,7 @@ public class Formulas
 
         switch (iimput)
         {
-            case 1:
+            case '1':
                 System.out.println("I1 = Ui");
                 System.out.println("     --");
                 System.out.println("     R1");
