@@ -13,8 +13,8 @@ public class Calculadora
 
         System.out.println("Insere os números:");
 
-        num1 = sc.nextDouble();
-        num2 = sc.nextDouble();
+        n1 = sc.nextDouble();
+        n2 = sc.nextDouble();
 
         System.out.println("Insere o operador (+, -, *, /, //):");
 
@@ -46,6 +46,6 @@ public class Calculadora
         System.out.println("Resultado:");
         System.out.println();
 
-        System.out.println(num1 + " " + op + " " + num2 + " = " + o);
+        System.out.println(n1 + " " + op + " " + n2 + " = " + total);
     }
 }
