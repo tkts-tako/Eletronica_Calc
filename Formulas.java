@@ -42,6 +42,74 @@ public class Formulas
                 System.out.println();
                 System.out.println("I1 = " + I1 + "A");
                 break;
+            case '2':
+                System.out.println("I1 = Ui");
+                System.out.println("     --");
+                System.out.println("     R1");
+                System.out.println("");
+                System.out.println("Ui = V");
+                Ui = sc.nextDouble();
+                System.out.println("R1 = Ω");
+                R1 = sc.nextDouble();
+                I1 = Ui / R1;
+                System.out.println();
+                System.out.println("I1 = " + Ui);
+                System.out.println("     --");
+                System.out.println("     " + R1);
+                System.out.println();
+                System.out.println("I1 = " + I1 + "A");
+                break;
+            case '3':
+                System.out.println("I1 = Ui");
+                System.out.println("     --");
+                System.out.println("     R1");
+                System.out.println("");
+                System.out.println("Ui = V");
+                Ui = sc.nextDouble();
+                System.out.println("R1 = Ω");
+                R1 = sc.nextDouble();
+                I1 = Ui / R1;
+                System.out.println();
+                System.out.println("I1 = " + Ui);
+                System.out.println("     --");
+                System.out.println("     " + R1);
+                System.out.println();
+                System.out.println("I1 = " + I1 + "A");
+                break;
+            case '4':
+                System.out.println("I1 = Ui");
+                System.out.println("     --");
+                System.out.println("     R1");
+                System.out.println("");
+                System.out.println("Ui = V");
+                Ui = sc.nextDouble();
+                System.out.println("R1 = Ω");
+                R1 = sc.nextDouble();
+                I1 = Ui / R1;
+                System.out.println();
+                System.out.println("I1 = " + Ui);
+                System.out.println("     --");
+                System.out.println("     " + R1);
+                System.out.println();
+                System.out.println("I1 = " + I1 + "A");
+                break;
+            case '5':
+                System.out.println("I1 = Ui");
+                System.out.println("     --");
+                System.out.println("     R1");
+                System.out.println("");
+                System.out.println("Ui = V");
+                Ui = sc.nextDouble();
+                System.out.println("R1 = Ω");
+                R1 = sc.nextDouble();
+                I1 = Ui / R1;
+                System.out.println();
+                System.out.println("I1 = " + Ui);
+                System.out.println("     --");
+                System.out.println("     " + R1);
+                System.out.println();
+                System.out.println("I1 = " + I1 + "A");
+                break;
             case 6:
                 break;
             default:
