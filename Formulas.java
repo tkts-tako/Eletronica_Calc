@@ -22,6 +22,7 @@ public class Formulas
         System.out.println("6. Sair");
 
         char iimput = sc.next().charAt(0);
+        System.out.println("");
 
         switch (iimput)
         {
