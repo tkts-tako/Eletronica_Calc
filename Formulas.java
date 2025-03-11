@@ -30,9 +30,9 @@ public class Formulas
                 System.out.println("     --");
                 System.out.println("     R1");
                 System.out.println("");
-                System.out.println("Ui = ");
+                System.out.println("Ui = V");
                 Ui = sc.nextDouble();
-                System.out.println("R1 = ");
+                System.out.println("R1 = Ω");
                 R1 = sc.nextDouble();
                 I1 = Ui / R1;
                 System.out.println();
@@ -40,7 +40,7 @@ public class Formulas
                 System.out.println("     --");
                 System.out.println("     " + R1);
                 System.out.println();
-                System.out.println("I1 = " + I1);
+                System.out.println("I1 = " + I1 + "A");
                 break;
             case 6:
                 break;
