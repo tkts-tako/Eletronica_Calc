@@ -7,7 +7,7 @@ public class Calculadora
 {
     public static void main(String[] args)
     {
-        double num1, num2;
+        double n1, n2;
 
         Scanner sc = new Scanner(System.in);
 
@@ -19,24 +19,24 @@ public class Calculadora
         System.out.println("Insere o operador (+, -, *, /, //):");
 
         char op = sc.next().charAt(0);
-        double o = 0;
+        double total = 0;
 
         switch (op)
         {
             case '+':
-                o = num1 + num2;
+                total = n1 + n2;
                 break;
 
             case '-':
-                o = num1 - num2;
+                total = n1 - n2;
                 break;
 
             case '*':
-                o = num1 * num2;
+                total = n1 * n2;
                 break;
 
             case '/':
-                o = num1 / num2;
+                total = n1 / n2;
                 break;
 
             default:
