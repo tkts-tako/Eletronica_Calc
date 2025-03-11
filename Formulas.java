@@ -16,7 +16,7 @@ public class Formulas
 
         System.out.println("Formulário:");
         System.out.println("1. Calculadora Básica");
-        System.out.println("6. Sair");
+        System.out.println("0. Sair");
 
         iimput = sc.next().charAt(0);
 
@@ -49,6 +49,9 @@ public class Formulas
                         switch (iimput)
                         {
                             case '1':
+                                System.out.println();
+                                System.out.println();
+                                System.out.println();
                                 System.out.println("I1 = Ui");
                                 System.out.println("     --");
                                 System.out.println("     R1");
@@ -170,7 +173,7 @@ public class Formulas
 
                break;
                 
-            case '6':
+            case '0':
                 break;
 
             default:
