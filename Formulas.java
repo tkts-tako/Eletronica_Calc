@@ -167,6 +167,7 @@ public class Formulas
                             }
 
                             break;
+
                     case '2':
                         System.out.println();
                         System.out.println();
@@ -298,6 +299,8 @@ public class Formulas
                                 System.out.println("Não foi selecionada nenhuma das opções.");
                         }
 
+                        break;
+
                     case '3':
                         System.out.println();
                         System.out.println();
@@ -420,6 +423,8 @@ public class Formulas
                             default:
                                 System.out.println("Não foi selecionada nenhuma das opções.");
                         }
+
+                        break;
 
                     default:
                         System.out.println("Não foi selecionada nenhuma das opções.");
