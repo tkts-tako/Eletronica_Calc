@@ -1,442 +1,174 @@
-import java.io.*;
-import java.lang.*;
-import java.lang.Math;
+import java.util.InputMismatchException;
 import java.util.Scanner;
+import java.text.DecimalFormat;
 
-public class Formulas
-{
-    public static void main(String[] args)
-    {
-        double R1, R2, R3, R4, RL;
-        double I1, I2, I3, I4, IL;
-        double Ui, Uo;
-        char iimput;
+public class Formulas {
+    private static final Scanner sc = new Scanner(System.in);
+    private static final DecimalFormat df = new DecimalFormat("#.#####");
 
-        Scanner sc = new Scanner(System.in);
+    public static void main(String[] args) {
+        boolean sair = false;
+        while (!sair) {
+            mostrarMenuPrincipal();
+            char opc = lerOpcao();
+            switch (opc) {
+                case '1' -> menuCalculadoraBasica();
+                case '0' -> {
+                    System.out.println("Saindo... Até logo.");
+                    sair = true;
+                }
+                default -> System.out.println("Opção inválida. Tente novamente.");
+            }
+            System.out.println();
+        }
+    }
 
+    private static void mostrarMenuPrincipal() {
         System.out.println("Formulário:");
         System.out.println("1. Calculadora Básica");
         System.out.println("0. Sair");
-
-        iimput = sc.next().charAt(0);
-
-        switch (iimput)
-        {
-            case '1':
-                System.out.println();
-                System.out.println();
-                System.out.println();
-                System.out.println("1. Calcular Intensidade de Corrente (I)");
-                System.out.println("2. Calcular Resistência (R)");
-                System.out.println("3. Calcular Tensão (U)");
-
-                iimput = sc.next().charAt(0);
-
-                switch (iimput)
-                {
-                    case '1':
-                        System.out.println();
-                        System.out.println();
-                        System.out.println();
-                        System.out.println("1. Calcular I1");
-                        System.out.println("2. Calcular I2");
-                        System.out.println("3. Calcular I3");
-                        System.out.println("4. Calcular I4");
-                        System.out.println("5. Calcular IL");
-
-                        iimput = sc.next().charAt(0);
-
-                        switch (iimput)
-                        {
-                            case '1':
-                                System.out.println();
-                                System.out.println();
-                                System.out.println();
-                                System.out.println("I1 = Ui");
-                                System.out.println("     --");
-                                System.out.println("     R1");
-                                System.out.println("");
-
-                                System.out.println("Ui = ");
-                                Ui = sc.nextDouble();
-
-                                System.out.println("R1 = ");
-                                R1 = sc.nextDouble();
-
-                                I1 = Ui / R1;
-
-                                System.out.println();
-                                System.out.println("I1 = " + Ui);
-                                System.out.println("     ---");
-                                System.out.println("     " + R1);
-                                System.out.println();
-                                System.out.println("I1 = " + I1 + "A");
-                                break;
-
-                            case '2':
-                                System.out.println("I2 = Ui");
-                                System.out.println("     --");
-                                System.out.println("     R2");
-                                System.out.println("");
-
-                                System.out.println("Ui = ");
-                                Ui = sc.nextDouble();
-
-                                System.out.println("R2 = ");
-                                R2 = sc.nextDouble();
-
-                                I2 = Ui / R2;
-
-                                System.out.println();
-                                System.out.println("I2 = " + Ui);
-                                System.out.println("     ---");
-                                System.out.println("     " + R2);
-                                System.out.println();
-                                System.out.println("I2 = " + I2 + "A");
-                                break;
-
-                            case '3':
-                                System.out.println("I3 = Ui");
-                                System.out.println("     --");
-                                System.out.println("     R3");
-                                System.out.println("");
-
-                                System.out.println("Ui = ");
-                                Ui = sc.nextDouble();
-
-                                System.out.println("R3 = ");
-                                R3 = sc.nextDouble();
-
-                                I3 = Ui / R3;
-
-                                System.out.println();
-                                System.out.println("I3 = " + Ui);
-                                System.out.println("     ---");
-                                System.out.println("     " + R3);
-                                System.out.println();
-                                System.out.println("I3 = " + I3 + "A");
-                                break;
-
-                            case '4':
-                                System.out.println("I4 = Ui");
-                                System.out.println("     --");
-                                System.out.println("     R4");
-                                System.out.println("");
-
-                                System.out.println("Ui = ");
-                                Ui = sc.nextDouble();
-
-                                System.out.println("R4 = ");
-                                R4 = sc.nextDouble();
-
-                                I4 = Ui / R4;
-
-                                System.out.println();
-                                System.out.println("I4 = " + Ui);
-                                System.out.println("     ---");
-                                System.out.println("     " + R4);
-                                System.out.println();
-                                System.out.println("I4 = " + I4 + "A");
-                                break;
-
-                            case '5':
-                                System.out.println("IL = Ui");
-                                System.out.println("     --");
-                                System.out.println("     RL");
-                                System.out.println("");
-
-                                System.out.println("Ui = ");
-                                Ui = sc.nextDouble();
-
-                                System.out.println("RL = ");
-                                RL = sc.nextDouble();
-
-                                IL = Ui / RL;
-                                
-                                System.out.println();
-                                System.out.println("IL = " + Ui);
-                                System.out.println("     ---");
-                                System.out.println("     " + RL);
-                                System.out.println();
-                                System.out.println("IL = " + IL + "A");
-                                break;
-                                
-
-                            default:
-                                System.out.println("Não foi selecionada nenhuma das opções.");
-                            }
-
-                            break;
-
-                    case '2':
-                        System.out.println();
-                        System.out.println();
-                        System.out.println();
-                        System.out.println("1. Calcular R1");
-                        System.out.println("2. Calcular R2");
-                        System.out.println("3. Calcular R3");
-                        System.out.println("4. Calcular R4");
-                        System.out.println("5. Calcular RL");
-
-                        iimput = sc.next().charAt(0);
-
-                        switch (iimput)
-                        {
-                            case '1':
-                                System.out.println();
-                                System.out.println();
-                                System.out.println();
-                                System.out.println("R1 = Ui");
-                                System.out.println("     --");
-                                System.out.println("     I1");
-                                System.out.println("");
-
-                                System.out.println("Ui = ");
-                                Ui = sc.nextDouble();
-
-                                System.out.println("I1 = ");
-                                I1 = sc.nextDouble();
-
-                                R1 = Ui / I1;
-
-                                System.out.println();
-                                System.out.println("R1 = " + Ui);
-                                System.out.println("     ---");
-                                System.out.println("     " + I1);
-                                System.out.println();
-                                System.out.println("R1 = " + R1 + "Ohm");
-                                break;
-
-                            case '2':
-                                System.out.println("R2 = Ui");
-                                System.out.println("     --");
-                                System.out.println("     I2");
-                                System.out.println("");
-
-                                System.out.println("Ui = ");
-                                Ui = sc.nextDouble();
-
-                                System.out.println("I2 = ");
-                                I2 = sc.nextDouble();
-
-                                R2 = Ui / I2;
-
-                                System.out.println();
-                                System.out.println("R2 = " + Ui);
-                                System.out.println("     ---");
-                                System.out.println("     " + I2);
-                                System.out.println();
-                                System.out.println("R2 = " + R2 + "Ohm");
-                                break;
-
-                            case '3':
-                                System.out.println("R3 = Ui");
-                                System.out.println("     --");
-                                System.out.println("     I3");
-                                System.out.println("");
-
-                                System.out.println("Ui = ");
-                                Ui = sc.nextDouble();
-
-                                System.out.println("I3 = ");
-                                I3 = sc.nextDouble();
-
-                                R3 = Ui / I3;
-
-                                System.out.println();
-                                System.out.println("R3 = " + Ui);
-                                System.out.println("     ---");
-                                System.out.println("     " + I3);
-                                System.out.println();
-                                System.out.println("R3 = " + R3 + "Ohm");
-                                break;
-
-                            case '4':
-                                System.out.println("R4 = Ui");
-                                System.out.println("     --");
-                                System.out.println("     I4");
-                                System.out.println("");
-
-                                System.out.println("Ui = ");
-                                Ui = sc.nextDouble();
-
-                                System.out.println("I4 = ");
-                                I4 = sc.nextDouble();
-
-                                R4 = Ui / I4;
-
-                                System.out.println();
-                                System.out.println("R4 = " + Ui);
-                                System.out.println("     ---");
-                                System.out.println("     " + I4);
-                                System.out.println();
-                                System.out.println("R4 = " + R4 + "Ohm");
-                                break;
-
-                            case '5':
-                                System.out.println("RL = Ui");
-                                System.out.println("     --");
-                                System.out.println("     IL");
-                                System.out.println("");
-
-                                System.out.println("Ui = ");
-                                Ui = sc.nextDouble();
-
-                                System.out.println("IL = ");
-                                IL = sc.nextDouble();
-
-                                RL = Ui / IL;
-                                
-                                System.out.println();
-                                System.out.println("RL = " + Ui);
-                                System.out.println("     ---");
-                                System.out.println("     " + IL);
-                                System.out.println();
-                                System.out.println("RL = " + RL + "Ohm");
-                                break;
-
-                            default:
-                                System.out.println("Não foi selecionada nenhuma das opções.");
-                        }
-
-                        break;
-
-                    case '3':
-                        System.out.println();
-                        System.out.println();
-                        System.out.println();
-                        System.out.println("1. Calcular Uo com R1");
-                        System.out.println("2. Calcular Uo com R2");
-                        System.out.println("3. Calcular Uo com R3");
-                        System.out.println("4. Calcular Uo com R4");
-                        System.out.println("5. Calcular Uo com RL");
-
-                        iimput = sc.next().charAt(0);
-
-                        switch (iimput)
-                        {
-                            case '1':
-                                System.out.println();
-                                System.out.println();
-                                System.out.println();
-                                System.out.println("Uo = R1 * I1");
-                                System.out.println("");
-
-                                System.out.println("R1 = ");
-                                R1 = sc.nextDouble();
-
-                                System.out.println("I1 = ");
-                                I1 = sc.nextDouble();
-
-                                Uo = R1 * I1;
-
-                                System.out.println();
-                                System.out.println("Uo = " + R1 + " * " + I1);
-                                System.out.println();
-                                System.out.println("Uo = " + Uo + "V");
-                                break;
-
-                            case '2':
-                                System.out.println();
-                                System.out.println();
-                                System.out.println();
-                                System.out.println("Uo = R2 * I2");
-                                System.out.println("");
-
-                                System.out.println("R2 = ");
-                                R2 = sc.nextDouble();
-
-                                System.out.println("I2 = ");
-                                I2 = sc.nextDouble();
-
-                                Uo = R2 * I2;
-
-                                System.out.println();
-                                System.out.println("Uo = " + R2 + " * " + I2);
-                                System.out.println();
-                                System.out.println("Uo = " + Uo + "V");
-                                break;
-
-                            case '3':
-                                System.out.println();
-                                System.out.println();
-                                System.out.println();
-                                System.out.println("Uo = R3 * I3");
-                                System.out.println("");
-
-                                System.out.println("R3 = ");
-                                R3 = sc.nextDouble();
-
-                                System.out.println("I3 = ");
-                                I3 = sc.nextDouble();
-
-                                Uo = R3 * I3;
-
-                                System.out.println();
-                                System.out.println("Uo = " + R3 + " * " + I3);
-                                System.out.println();
-                                System.out.println("Uo = " + Uo + "V");
-                                break;
-
-                            case '4':
-                                System.out.println();
-                                System.out.println();
-                                System.out.println();
-                                System.out.println("Uo = R4 * I4");
-                                System.out.println("");
-
-                                System.out.println("R4 = ");
-                                R4 = sc.nextDouble();
-
-                                System.out.println("I4 = ");
-                                I4 = sc.nextDouble();
-
-                                Uo = R4 * I4;
-
-                                System.out.println();
-                                System.out.println("Uo = " + R4 + " * " + I4);
-                                System.out.println();
-                                System.out.println("Uo = " + Uo + "V");
-                                break;
-
-                            case '5':
-                                System.out.println();
-                                System.out.println();
-                                System.out.println();
-                                System.out.println("Uo = RL * IL");
-                                System.out.println("");
-
-                                System.out.println("RL = ");
-                                RL = sc.nextDouble();
-
-                                System.out.println("IL = ");
-                                IL = sc.nextDouble();
-
-                                Uo = RL * IL;
-
-                                System.out.println();
-                                System.out.println("Uo = " + RL + " * " + IL);
-                                System.out.println();
-                                System.out.println("Uo = " + Uo + "V");
-                                break;
-
-                            default:
-                                System.out.println("Não foi selecionada nenhuma das opções.");
-                        }
-
-                        break;
-
-                    default:
-                        System.out.println("Não foi selecionada nenhuma das opções.");
-                }
-
-               break;
-                
-            case '0':
-                break;
-
-            default:
-                System.out.println("Não foi selecionada nenhuma das opções.");
+        System.out.print("Escolha uma opção: ");
+    }
+
+    private static char lerOpcao() {
+        String s = sc.next();
+        return s.isEmpty() ? '\0' : s.charAt(0);
+    }
+
+    private static void menuCalculadoraBasica() {
+        System.out.println();
+        System.out.println("1. Calcular Intensidade de Corrente (I)");
+        System.out.println("2. Calcular Resistência (R)");
+        System.out.println("3. Calcular Tensão (U)");
+        System.out.print("Escolha uma opção: ");
+        char opc = lerOpcao();
+        switch (opc) {
+            case '1' -> menuCalcularI();
+            case '2' -> menuCalcularR();
+            case '3' -> menuCalcularU();
+            default -> System.out.println("Opção inválida no menu Calculadora Básica.");
         }
+    }
+
+    private static void menuCalcularI() {
+        System.out.println();
+        System.out.println("1. Calcular I1");
+        System.out.println("2. Calcular I2");
+        System.out.println("3. Calcular I3");
+        System.out.println("4. Calcular I4");
+        System.out.println("5. Calcular IL");
+        System.out.print("Escolha uma opção: ");
+        char opc = lerOpcao();
+        switch (opc) {
+            case '1' -> calcularI("I1");
+            case '2' -> calcularI("I2");
+            case '3' -> calcularI("I3");
+            case '4' -> calcularI("I4");
+            case '5' -> calcularI("IL");
+            default -> System.out.println("Nenhuma das opções foi selecionada.");
+        }
+    }
+
+    private static void calcularI(String label) {
+        try {
+            System.out.println();
+            System.out.println(label + " = Ui / R");
+            double Ui = lerDouble("Ui (V): ");
+            double R = lerDouble("R (Ω): ");
+            if (R == 0) {
+                System.out.println("Erro: resistência não pode ser zero.");
+                return;
+            }
+            double I = Ui / R;
+            System.out.println();
+            System.out.println(label + " = " + df.format(Ui) + " / " + df.format(R));
+            System.out.println(label + " = " + df.format(I) + " A");
+        } catch (InputMismatchException e) {
+            limparScanner();
+            System.out.println("Entrada inválida. Valores numéricos esperados.");
+        }
+    }
+
+    private static void menuCalcularR() {
+        System.out.println();
+        System.out.println("1. Calcular R1");
+        System.out.println("2. Calcular R2");
+        System.out.println("3. Calcular R3");
+        System.out.println("4. Calcular R4");
+        System.out.println("5. Calcular RL");
+        System.out.print("Escolha uma opção: ");
+        char opc = lerOpcao();
+        switch (opc) {
+            case '1' -> calcularR("R1");
+            case '2' -> calcularR("R2");
+            case '3' -> calcularR("R3");
+            case '4' -> calcularR("R4");
+            case '5' -> calcularR("RL");
+            default -> System.out.println("Nenhuma das opções foi selecionada.");
+        }
+    }
+
+    private static void calcularR(String label) {
+        try {
+            System.out.println();
+            System.out.println(label + " = Ui / I");
+            double Ui = lerDouble("Ui (V): ");
+            double I = lerDouble("I (A): ");
+            if (I == 0) {
+                System.out.println("Erro: corrente não pode ser zero.");
+                return;
+            }
+            double R = Ui / I;
+            System.out.println();
+            System.out.println(label + " = " + df.format(Ui) + " / " + df.format(I));
+            System.out.println(label + " = " + df.format(R) + " Ω");
+        } catch (InputMismatchException e) {
+            limparScanner();
+            System.out.println("Entrada inválida. Valores numéricos esperados.");
+        }
+    }
+
+    private static void menuCalcularU() {
+        System.out.println();
+        System.out.println("1. Calcular U entre pontos (U)");
+        System.out.println("2. Calcular Ui a partir de outros dados (exemplo)");
+        System.out.print("Escolha uma opção: ");
+        char opc = lerOpcao();
+        switch (opc) {
+            case '1' -> calcularU();
+            default -> System.out.println("Opção de calcular U não implementada ou inválida.");
+        }
+    }
+
+    private static void calcularU() {
+        try {
+            System.out.println();
+            System.out.println("U = I * R");
+            double I = lerDouble("I (A): ");
+            double R = lerDouble("R (Ω): ");
+            double U = I * R;
+            System.out.println();
+            System.out.println("U = " + df.format(I) + " * " + df.format(R));
+            System.out.println("U = " + df.format(U) + " V");
+        } catch (InputMismatchException e) {
+            limparScanner();
+            System.out.println("Entrada inválida. Valores numéricos esperados.");
+        }
+    }
+
+    private static double lerDouble(String prompt) {
+        System.out.print(prompt);
+        while (true) {
+            try {
+                return sc.nextDouble();
+            } catch (InputMismatchException e) {
+                limparScanner();
+                System.out.print("Entrada inválida. Digite um número: ");
+            }
+        }
+    }
+
+    private static void limparScanner() {
+        if (sc.hasNext()) sc.nextLine();
     }
 }
